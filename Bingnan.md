@@ -5,7 +5,7 @@
 ヽ(°〇°)ﾉ Who Am I? ヾ(•ω•`)o
 A self-proclaimed Dungeon Architect 🏰, Code Gremlin 🧙‍♂️, and Bug Whisperer 🐛. Currently lost in the dark dungeons of Unreal Engine 5, trying to make things look cool without melting my GPU. If it compiles, it’s a miracle. If it runs, it’s a blessing. If it doesn’t crash… well, that’s sorcery.
 
-⸻
+![R](https://github.com/user-attachments/assets/77e92c0b-2f3a-4127-9f14-98cab9fe7b30)
 
 🛠 What Am I Doing? (╯°□°）╯︵ ┻━┻
 
