@@ -1,8 +1,6 @@
 # 🎮 Welcome to **The Guild (Deep Dark Dungeon)!** 🚀
 
-![Game Concept](https://i.makeagif.com/media/9-23-2015/EadDV8.gif)
-
-**Boss of Dungeon**
+![Game Concept](https://github.com/ErenratZeng/ErenratZeng.github.io/blob/main/assets/img/gallery/wechat_2025-03-07_203004_920.png)
 
 ---
 
