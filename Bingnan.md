@@ -1,6 +1,6 @@
 🎮 Welcome to My Chaotic UE5 Dev Zone! 🎭🔥
 
-![image](https://github.com/user-attachments/assets/75470aff-b3e3-48e3-8b46-3c30df232ee4)
+![xDS5DmpZf2GzNDW](https://github.com/user-attachments/assets/fb5ad12b-1c8a-4bfb-a26f-7371c5844683)
 
 ヽ(°〇°)ﾉ Who Am I? ヾ(•ω•`)o
 A self-proclaimed Dungeon Architect 🏰, Code Gremlin 🧙‍♂️, and Bug Whisperer 🐛. Currently lost in the dark dungeons of Unreal Engine 5, trying to make things look cool without melting my GPU. If it compiles, it’s a miracle. If it runs, it’s a blessing. If it doesn’t crash… well, that’s sorcery.
