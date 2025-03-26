@@ -1,0 +1,281 @@
+[+] Containers:
+ |- [+] Container: /Game/Maps/room_move___stop2
+ |   |- [+] ActorDescs:
+ |   |   |- Guid:04805E154BA9DD992E0190AEA82AEE21 BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF32002_1109962059 Label:SM_Bld_Castle_Floor_Stone_3 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-0.104 Y=500.000 Z=-25.000), Max=(X=500.000 Y=750.000 Z=3.480) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:0C4C4EC64FE017603F5AFBBB1CB8ABB6 BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF52002_1161120450 Label:SM_Bld_Castle_Floor_Stone_4 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-0.104 Y=750.000 Z=-25.000), Max=(X=500.000 Y=1000.000 Z=3.480) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:176690B3460B340C8B4DF6BFB2E71454 BaseClass: NativeClass:/Script/Engine.PointLight Name:PointLight_UAID_E8808871396DF32002_1810998081 Label:PointLight2 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-1600.000 Y=-1250.000 Z=-1750.000), Max=(X=2400.000 Y=2750.000 Z=2250.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:1FC674C14ED5E3D975645E89F8F51EB5 BaseClass: NativeClass:/Script/Engine.PlayerStart Name:PlayerStart_UAID_0A002700000D1E2202_1579089680 Label:PlayerStart SpatiallyLoaded:0 Bounds:IsValid=true, Min=(X=198.258 Y=-314.537 Z=3.748), Max=(X=278.258 Y=-234.537 Z=187.748) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:27ADEA864030A4BEAFF178BE7C2FF8CE BaseClass: NativeClass:/Script/Engine.WorldDataLayers Name:WorldDataLayers Label:WorldDataLayers SpatiallyLoaded:0 Bounds:Invalid RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:1
+ |   |   |- Guid:2D0B19784A202CEC8D384CA62A7ABF92 BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF32002_1346531066 Label:SM_Bld_Castle_Wall_Door_2 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-0.001 Y=-531.271 Z=0.000), Max=(X=499.999 Y=-468.732 Z=500.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:3C8A639941698C41E990C086307C4137 BaseClass:/Game/Blueprint/NPC/NPC4.NPC4_C NativeClass:/Script/Engine.Character Name:NPC4_C_UAID_6C24085452974F2202_1872206306 Label:NPC4 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=208.470 Y=65.500 Z=0.000), Max=(X=296.314 Y=134.500 Z=256.385) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:59050D184DC49DF53BE686A59F6792FE BaseClass:/Game/Blueprint/Portals/Item/BP_RandomGenerator.BP_RandomGenerator_C NativeClass:/Script/Engine.Actor Name:BP_RandomGenerator_C_UAID_6C2408545297012302_1524419641 Label:BP_RandomGenerator SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=500.000 Y=880.000 Z=440.000), Max=(X=500.000 Y=880.000 Z=440.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:5A07ADEA4898893F84D6BEB29F0AB17C BaseClass: NativeClass:/Script/Engine.PointLight Name:PointLight_UAID_E8808871396DF32002_2007658085 Label:PointLight3 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-1750.000 Y=-2450.000 Z=-1700.000), Max=(X=2250.000 Y=1550.000 Z=2300.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:67AA15B4419FAB67EAC9DB84ED0C20B1 BaseClass: NativeClass:/Script/Engine.PointLight Name:PointLight_UAID_E8808871396DF42002_1447518268 Label:PointLight5 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-1550.000 Y=-2250.000 Z=-1750.000), Max=(X=2450.000 Y=1750.000 Z=2250.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:804CE06248E49D59A6B7E4A752BD9686 BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF32002_1147579061 Label:SM_Bld_Castle_Floor_Stone_5 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=496.520 Y=500.000 Z=-0.104), Max=(X=525.000 Y=1000.000 Z=500.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:828E012B4FF0AF41BD2BB58E348D069D BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF32002_1670216077 Label:SM_Prop_Torch_3 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=461.812 Y=238.016 Z=220.200), Max=(X=502.917 Y=261.984 Z=284.904) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:8319569944109B87576A6DB36935280E BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF32002_1173993062 Label:SM_Bld_Castle_Floor_Stone_6 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=496.520 Y=0.000 Z=-0.104), Max=(X=525.000 Y=500.000 Z=500.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:99BDEEB1493C4688B2070E8E256ADB72 BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF52002_1226008451 Label:SM_Bld_Castle_Floor_Stone_10 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-0.000 Y=996.520 Z=-0.104), Max=(X=500.000 Y=1025.000 Z=500.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:9EEE4B0C401BAA4AB80D44ABCF6AC6BF BaseClass:/Game/Blueprint/Portals/portal/BP_Gate.BP_Gate_C NativeClass:/Script/Engine.Actor Name:BP_Gate_C_UAID_0A002700000D1F2202_1460670874 Label:BP_Gate SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=192.960 Y=-502.320 Z=-2.160), Max=(X=307.040 Y=-477.680 Z=242.160) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:A137128E47AAB6571CC43BA33A9030F2 BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF32002_1283261064 Label:SM_Bld_Castle_Door_Single_01 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=199.491 Y=-512.889 Z=10.461), Max=(X=302.394 Y=-487.111 Z=244.968) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:A2D6FE6A42F004C4A5ED17ADA7AC4FDE BaseClass:/Game/Blueprint/Portals/BP_Bounds.BP_Bounds_C NativeClass:/Script/Engine.Actor Name:BP_Bounds_C_UAID_0A002700000D1F2202_1495112881 Label:BP_Bounds SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-29.575 Y=-479.120 Z=-17.840), Max=(X=9.575 Y=999.120 Z=537.840) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:A4F0683E4E93A737095569AF2016765C BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF32002_1100754058 Label:SM_Bld_Castle_Floor_Stone_2 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-0.104 Y=0.000 Z=-25.000), Max=(X=500.000 Y=500.000 Z=3.480) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:B12009674A31FB1A7F325B9D217B2DFE BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF42002_1288873267 Label:SM_Bld_Castle_Floor_Stone_11 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=496.520 Y=-500.000 Z=-0.104), Max=(X=525.000 Y=0.000 Z=500.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:BDFCCE1845714A709C914C99BBF0D03F BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF42002_1461634269 Label:SM_Prop_Torch_8 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=461.812 Y=-261.984 Z=220.200), Max=(X=502.917 Y=-238.016 Z=284.904) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:C2EB62D9484FFD41D57651B17A8ED541 BaseClass: NativeClass:/Script/Engine.PointLight Name:PointLight_UAID_E8808871396DF32002_1706056078 Label:PointLight SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-1550.000 Y=-1750.000 Z=-1750.000), Max=(X=2450.000 Y=2250.000 Z=2250.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:D5B0050946C63D33F4C51D89D9FB7F3E BaseClass: NativeClass:/Script/Engine.PointLight Name:PointLight_UAID_E8808871396DF42002_1181752264 Label:PointLight4 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-1750.000 Y=-1050.000 Z=-1700.000), Max=(X=2250.000 Y=2950.000 Z=2300.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:E869F9094C76E01D15023E97B808EF78 BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF42002_1216147265 Label:SM_Prop_Torch_6 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=238.016 Y=-482.917 Z=270.200), Max=(X=261.984 Y=-441.812 Z=334.904) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:EB52C63E4132A65C80A0C38472E19BE1 BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF42002_1217964266 Label:SM_Prop_Torch_7 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=238.016 Y=961.812 Z=270.200), Max=(X=261.984 Y=1002.917 Z=334.904) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:EB6C275641BCC5961815BC9CDCC51E5B BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF22002_1619271881 Label:SM_Bld_Castle_Floor_Stone_01 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-0.104 Y=-500.000 Z=-25.000), Max=(X=500.000 Y=0.000 Z=3.480) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- Guid:F9C0F61444078F625E2DFFBD85C42251 BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF42002_1164479263 Label:SM_Prop_Torch_5 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=461.812 Y=738.016 Z=220.200), Max=(X=502.917 Y=761.984 Z=284.904) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |- [+] Clusters:
+ |   |   |- [+] [  0]
+ |   |   |   |- Guid:04805E154BA9DD992E0190AEA82AEE21 BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF32002_1109962059 Label:SM_Bld_Castle_Floor_Stone_3 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-0.104 Y=500.000 Z=-25.000), Max=(X=500.000 Y=750.000 Z=3.480) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [  1]
+ |   |   |   |- Guid:0C4C4EC64FE017603F5AFBBB1CB8ABB6 BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF52002_1161120450 Label:SM_Bld_Castle_Floor_Stone_4 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-0.104 Y=750.000 Z=-25.000), Max=(X=500.000 Y=1000.000 Z=3.480) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [  2]
+ |   |   |   |- Guid:176690B3460B340C8B4DF6BFB2E71454 BaseClass: NativeClass:/Script/Engine.PointLight Name:PointLight_UAID_E8808871396DF32002_1810998081 Label:PointLight2 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-1600.000 Y=-1250.000 Z=-1750.000), Max=(X=2400.000 Y=2750.000 Z=2250.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [  3]
+ |   |   |   |- Guid:1FC674C14ED5E3D975645E89F8F51EB5 BaseClass: NativeClass:/Script/Engine.PlayerStart Name:PlayerStart_UAID_0A002700000D1E2202_1579089680 Label:PlayerStart SpatiallyLoaded:0 Bounds:IsValid=true, Min=(X=198.258 Y=-314.537 Z=3.748), Max=(X=278.258 Y=-234.537 Z=187.748) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [  4]
+ |   |   |   |- Guid:27ADEA864030A4BEAFF178BE7C2FF8CE BaseClass: NativeClass:/Script/Engine.WorldDataLayers Name:WorldDataLayers Label:WorldDataLayers SpatiallyLoaded:0 Bounds:Invalid RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:1
+ |   |   |- [+] [  5]
+ |   |   |   |- Guid:2D0B19784A202CEC8D384CA62A7ABF92 BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF32002_1346531066 Label:SM_Bld_Castle_Wall_Door_2 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-0.001 Y=-531.271 Z=0.000), Max=(X=499.999 Y=-468.732 Z=500.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [  6]
+ |   |   |   |- Guid:3C8A639941698C41E990C086307C4137 BaseClass:/Game/Blueprint/NPC/NPC4.NPC4_C NativeClass:/Script/Engine.Character Name:NPC4_C_UAID_6C24085452974F2202_1872206306 Label:NPC4 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=208.470 Y=65.500 Z=0.000), Max=(X=296.314 Y=134.500 Z=256.385) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [  7]
+ |   |   |   |- Guid:59050D184DC49DF53BE686A59F6792FE BaseClass:/Game/Blueprint/Portals/Item/BP_RandomGenerator.BP_RandomGenerator_C NativeClass:/Script/Engine.Actor Name:BP_RandomGenerator_C_UAID_6C2408545297012302_1524419641 Label:BP_RandomGenerator SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=500.000 Y=880.000 Z=440.000), Max=(X=500.000 Y=880.000 Z=440.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [  8]
+ |   |   |   |- Guid:5A07ADEA4898893F84D6BEB29F0AB17C BaseClass: NativeClass:/Script/Engine.PointLight Name:PointLight_UAID_E8808871396DF32002_2007658085 Label:PointLight3 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-1750.000 Y=-2450.000 Z=-1700.000), Max=(X=2250.000 Y=1550.000 Z=2300.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [  9]
+ |   |   |   |- Guid:67AA15B4419FAB67EAC9DB84ED0C20B1 BaseClass: NativeClass:/Script/Engine.PointLight Name:PointLight_UAID_E8808871396DF42002_1447518268 Label:PointLight5 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-1550.000 Y=-2250.000 Z=-1750.000), Max=(X=2450.000 Y=1750.000 Z=2250.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [ 10]
+ |   |   |   |- Guid:804CE06248E49D59A6B7E4A752BD9686 BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF32002_1147579061 Label:SM_Bld_Castle_Floor_Stone_5 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=496.520 Y=500.000 Z=-0.104), Max=(X=525.000 Y=1000.000 Z=500.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [ 11]
+ |   |   |   |- Guid:828E012B4FF0AF41BD2BB58E348D069D BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF32002_1670216077 Label:SM_Prop_Torch_3 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=461.812 Y=238.016 Z=220.200), Max=(X=502.917 Y=261.984 Z=284.904) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [ 12]
+ |   |   |   |- Guid:8319569944109B87576A6DB36935280E BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF32002_1173993062 Label:SM_Bld_Castle_Floor_Stone_6 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=496.520 Y=0.000 Z=-0.104), Max=(X=525.000 Y=500.000 Z=500.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [ 13]
+ |   |   |   |- Guid:99BDEEB1493C4688B2070E8E256ADB72 BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF52002_1226008451 Label:SM_Bld_Castle_Floor_Stone_10 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-0.000 Y=996.520 Z=-0.104), Max=(X=500.000 Y=1025.000 Z=500.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [ 14]
+ |   |   |   |- Guid:9EEE4B0C401BAA4AB80D44ABCF6AC6BF BaseClass:/Game/Blueprint/Portals/portal/BP_Gate.BP_Gate_C NativeClass:/Script/Engine.Actor Name:BP_Gate_C_UAID_0A002700000D1F2202_1460670874 Label:BP_Gate SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=192.960 Y=-502.320 Z=-2.160), Max=(X=307.040 Y=-477.680 Z=242.160) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [ 15]
+ |   |   |   |- Guid:A137128E47AAB6571CC43BA33A9030F2 BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF32002_1283261064 Label:SM_Bld_Castle_Door_Single_01 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=199.491 Y=-512.889 Z=10.461), Max=(X=302.394 Y=-487.111 Z=244.968) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [ 16]
+ |   |   |   |- Guid:A2D6FE6A42F004C4A5ED17ADA7AC4FDE BaseClass:/Game/Blueprint/Portals/BP_Bounds.BP_Bounds_C NativeClass:/Script/Engine.Actor Name:BP_Bounds_C_UAID_0A002700000D1F2202_1495112881 Label:BP_Bounds SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-29.575 Y=-479.120 Z=-17.840), Max=(X=9.575 Y=999.120 Z=537.840) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [ 17]
+ |   |   |   |- Guid:A4F0683E4E93A737095569AF2016765C BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF32002_1100754058 Label:SM_Bld_Castle_Floor_Stone_2 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-0.104 Y=0.000 Z=-25.000), Max=(X=500.000 Y=500.000 Z=3.480) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [ 18]
+ |   |   |   |- Guid:B12009674A31FB1A7F325B9D217B2DFE BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF42002_1288873267 Label:SM_Bld_Castle_Floor_Stone_11 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=496.520 Y=-500.000 Z=-0.104), Max=(X=525.000 Y=0.000 Z=500.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [ 19]
+ |   |   |   |- Guid:BDFCCE1845714A709C914C99BBF0D03F BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF42002_1461634269 Label:SM_Prop_Torch_8 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=461.812 Y=-261.984 Z=220.200), Max=(X=502.917 Y=-238.016 Z=284.904) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [ 20]
+ |   |   |   |- Guid:C2EB62D9484FFD41D57651B17A8ED541 BaseClass: NativeClass:/Script/Engine.PointLight Name:PointLight_UAID_E8808871396DF32002_1706056078 Label:PointLight SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-1550.000 Y=-1750.000 Z=-1750.000), Max=(X=2450.000 Y=2250.000 Z=2250.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [ 21]
+ |   |   |   |- Guid:D5B0050946C63D33F4C51D89D9FB7F3E BaseClass: NativeClass:/Script/Engine.PointLight Name:PointLight_UAID_E8808871396DF42002_1181752264 Label:PointLight4 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-1750.000 Y=-1050.000 Z=-1700.000), Max=(X=2250.000 Y=2950.000 Z=2300.000) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:0 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [ 22]
+ |   |   |   |- Guid:E869F9094C76E01D15023E97B808EF78 BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF42002_1216147265 Label:SM_Prop_Torch_6 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=238.016 Y=-482.917 Z=270.200), Max=(X=261.984 Y=-441.812 Z=334.904) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [ 23]
+ |   |   |   |- Guid:EB52C63E4132A65C80A0C38472E19BE1 BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF42002_1217964266 Label:SM_Prop_Torch_7 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=238.016 Y=961.812 Z=270.200), Max=(X=261.984 Y=1002.917 Z=334.904) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [ 24]
+ |   |   |   |- Guid:EB6C275641BCC5961815BC9CDCC51E5B BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF22002_1619271881 Label:SM_Bld_Castle_Floor_Stone_01 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=-0.104 Y=-500.000 Z=-25.000), Max=(X=500.000 Y=0.000 Z=3.480) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |   |   |- [+] [ 25]
+ |   |   |   |- Guid:F9C0F61444078F625E2DFFBD85C42251 BaseClass: NativeClass:/Script/Engine.StaticMeshActor Name:StaticMeshActor_UAID_E8808871396DF42002_1164479263 Label:SM_Prop_Torch_5 SpatiallyLoaded:1 Bounds:IsValid=true, Min=(X=461.812 Y=738.016 Z=220.200), Max=(X=502.917 Y=761.984 Z=284.904) RuntimeGrid:None EditorOnly:0 RuntimeOnly:0 HLODRelevant:1 ListedInSceneOutliner:1 IsMainWorldOnly:0
+ |- ContainerInstances:
+ |- [+] MainContainer:
+ |   |-        ID: 00000000000000000000000000000000
+ |   |-  ParentID: 00000000000000000000000000000000
+ |   |-    Bounds: IsValid=true, Min=(X=-1750.000 Y=-2450.000 Z=-1750.000), Max=(X=2450.000 Y=2950.000 Z=2300.000)
+ |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |   |- Container: /Game/Maps/room_move___stop2
+----------------------------------------------------------------------------------------------------------------
+room_move___stop2 - Persistent Level
+----------------------------------------------------------------------------------------------------------------
+[+] Content of room_move___stop2 Persistent Level
+ |- Always loaded Actor Count: 2 
+ |- Actor Path: /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.PlayerStart_UAID_0A002700000D1E2202_1579089680
+ |- Actor Package: /Game/__ExternalActors__/Maps/room_move___stop2/7/PP/GFZF0T29PO9HVB2KVUK844
+ |- Actor Path: /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.WorldDataLayers
+ |- Actor Package: /Game/__ExternalActors__/Maps/room_move___stop2/9/VJ/L27ATNDEG2KWY97VZ58G1C
+
+----------------------------------------------------------------------------------------------------------------
+room_move___stop2 - Runtime Hash Set
+----------------------------------------------------------------------------------------------------------------
+[+] Content of Cell room_move___stop2_MainGrid_-1_0_0_0 (22F5JDGG3JUXNOBV8KVJ671BL)
+ |- Actor Count: 1
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.BP_Bounds_C_UAID_0A002700000D1F2202_1495112881
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/3/H5/LMJK1L48HRHV3DDVSANKXG
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: A2D6FE6A42F004C4A5ED17ADA7AC4FDE
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+[+] Content of Cell room_move___stop2_MainGrid_0_0_-1_0 (77D6E9J267Y462Z33ELEX31AO)
+ |- Actor Count: 3
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.StaticMeshActor_UAID_E8808871396DF32002_1109962059
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/7/MF/BUCX4TZW5AF6KH9UR300ED
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: 04805E154BA9DD992E0190AEA82AEE21
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.StaticMeshActor_UAID_E8808871396DF52002_1161120450
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/3/YX/0TH1SSW35K5DWK3JTQ6FCS
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: 0C4C4EC64FE017603F5AFBBB1CB8ABB6
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.StaticMeshActor_UAID_E8808871396DF32002_1100754058
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/8/YG/U53JR2Q85OKG38LVAF445N
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: A4F0683E4E93A737095569AF2016765C
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+[+] Content of Cell room_move___stop2_MainGrid_0_0_0_0 (8CTED2P4ET0DTJVXPF9O5FXCN)
+ |- Actor Count: 11
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.PointLight_UAID_E8808871396DF32002_1810998081
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/C/U4/5E3YUMFDYTM2QYLUK98SK5
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: 176690B3460B340C8B4DF6BFB2E71454
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.NPC4_C_UAID_6C24085452974F2202_1872206306
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/2/BL/2DRSEURTM8V2888FEHY5FC
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: 3C8A639941698C41E990C086307C4137
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.BP_RandomGenerator_C_UAID_6C2408545297012302_1524419641
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/A/TM/0OAX5G17WSN7LDERCQYOZS
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: 59050D184DC49DF53BE686A59F6792FE
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.StaticMeshActor_UAID_E8808871396DF32002_1147579061
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/4/DI/6EV0ZXAZAN6FZIJUOLDGVW
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: 804CE06248E49D59A6B7E4A752BD9686
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.StaticMeshActor_UAID_E8808871396DF32002_1670216077
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/C/I3/1BW5JACD975CC54CXHFPCC
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: 828E012B4FF0AF41BD2BB58E348D069D
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.StaticMeshActor_UAID_E8808871396DF32002_1173993062
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/2/8F/MR7SPDUBKQQPVZ4LTY0BLZ
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: 8319569944109B87576A6DB36935280E
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.StaticMeshActor_UAID_E8808871396DF52002_1226008451
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/A/I6/9Y1IJSXUVOHFOYJ1GSUPU2
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: 99BDEEB1493C4688B2070E8E256ADB72
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.PointLight_UAID_E8808871396DF32002_1706056078
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/4/L6/BHXQTGINLZSPKU6JSM4TVC
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: C2EB62D9484FFD41D57651B17A8ED541
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.PointLight_UAID_E8808871396DF42002_1181752264
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/0/GA/WC7M9I8QMQC67YMVK6UDAJ
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: D5B0050946C63D33F4C51D89D9FB7F3E
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.StaticMeshActor_UAID_E8808871396DF42002_1217964266
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/4/SR/IUAMDG620HT6T7G95EWL87
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: EB52C63E4132A65C80A0C38472E19BE1
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.StaticMeshActor_UAID_E8808871396DF42002_1164479263
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/8/VM/PNIM90VBCEFATKKLMS6ETI
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: F9C0F61444078F625E2DFFBD85C42251
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+[+] Content of Cell room_move___stop2_MainGrid_0_-1_-1_0 (E64I0GVQGLM5UHLRUDF0YYZMX)
+ |- Actor Count: 1
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.StaticMeshActor_UAID_E8808871396DF22002_1619271881
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/7/M5/IH2YIIWWR4G1OSC7N1GAFB
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: EB6C275641BCC5961815BC9CDCC51E5B
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+[+] Content of Cell room_move___stop2_MainGrid_0_-1_0_0 (EB5X2X04PNBQFIVYLGNGAQKFR)
+ |- Actor Count: 8
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.StaticMeshActor_UAID_E8808871396DF32002_1346531066
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/0/5M/W4191MHK7YU2AF0WCY7L28
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: 2D0B19784A202CEC8D384CA62A7ABF92
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.PointLight_UAID_E8808871396DF32002_2007658085
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/9/VZ/41YB4ZM9PSBMAJ7VD4SIHO
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: 5A07ADEA4898893F84D6BEB29F0AB17C
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.PointLight_UAID_E8808871396DF42002_1447518268
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/8/OG/XD8BZVI4ET5WN88HAAZ6QD
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: 67AA15B4419FAB67EAC9DB84ED0C20B1
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.BP_Gate_C_UAID_0A002700000D1F2202_1460670874
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/6/5E/5RUTYE1GNMI06ZG1CDXVLV
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: 9EEE4B0C401BAA4AB80D44ABCF6AC6BF
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.StaticMeshActor_UAID_E8808871396DF32002_1283261064
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/1/XT/LREYQA8M3S309E2CCCHGSE
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: A137128E47AAB6571CC43BA33A9030F2
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.StaticMeshActor_UAID_E8808871396DF42002_1288873267
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/9/GO/58KDI8IUZ3XRINQG3ER0O0
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: B12009674A31FB1A7F325B9D217B2DFE
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.StaticMeshActor_UAID_E8808871396DF42002_1461634269
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/9/2C/3VS8A2GNE0YQQG62OPNK8Y
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: BDFCCE1845714A709C914C99BBF0D03F
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+ |- [+] /Game/Maps/room_move___stop2.room_move___stop2:PersistentLevel.StaticMeshActor_UAID_E8808871396DF42002_1216147265
+ |   |-         Package: /Game/__ExternalActors__/Maps/room_move___stop2/4/LE/SS16L208L8762696FRBMWK
+ |   |-     Editor Only: 0
+ |   |-   Instance Guid: E869F9094C76E01D15023E97B808EF78
+ |   |- [+] Container:
+ |   |   |-        ID: 00000000000000000000000000000000
+ |   |   |- Transform: 0.000000,0.000000,0.000000|0.000000,0.000000,-0.000000|1.000000,1.000000,1.000000
+
