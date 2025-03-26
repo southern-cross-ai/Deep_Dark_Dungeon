@@ -1,32 +1,60 @@
-# Prerequisites
-*.d
+# ==============================
+# Unreal Engine Git Ignore File
+# Project: Deep_Dark_Dungeon
+# Local Path: D:\Postgraduates\UE\Project\Guild
+# ==============================
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
+# Build output folders
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+# Visual Studio files
+.vscode/
+.vs/
+*.sln
+*.suo
+*.VC.db
+*.VC.opendb
+*.opensdf
+*.sdf
+
+# Mac/Unix junk
+.DS_Store
+
+# Windows junk
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Logs and temporary files
+*.log
+*.tlog
+*.tmp
+*.bak
+*.local
+
+# Crash reports / autosaves
+*.dmp
+*.autosave
+
+# Compiled files
+*.pdb
 *.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
 *.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
+*.exe
 *.lib
 
-# Executables
-*.exe
-*.out
-*.app
+# User-specific settings
+*.user
+*.userprefs
+*.ide
+
+# Ignore local launcher data
+LauncherInstalled.dat
+
+# Optional: ignore Unreal .ubt / .uasset / .umap if using binary assets control
+#*.uasset
+#*.umap
