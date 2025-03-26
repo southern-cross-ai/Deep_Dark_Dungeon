@@ -1,60 +1,59 @@
 # ==============================
-# Unreal Engine Git Ignore File
+# Unreal Engine Git Ignore File (adjusted for nested Guild folder)
 # Project: Deep_Dark_Dungeon
-# Local Path: D:\Postgraduates\UE\Project\Guild
 # ==============================
 
 # Build output folders
-Binaries/
-Build/
-DerivedDataCache/
-Intermediate/
-Saved/
+Guild/Binaries/
+Guild/Build/
+Guild/DerivedDataCache/
+Guild/Intermediate/
+Guild/Saved/
 
 # Visual Studio files
-.vscode/
-.vs/
-*.sln
-*.suo
-*.VC.db
-*.VC.opendb
-*.opensdf
-*.sdf
+Guild/.vscode/
+Guild/.vs/
+Guild/*.sln
+Guild/*.suo
+Guild/*.VC.db
+Guild/*.VC.opendb
+Guild/*.opensdf
+Guild/*.sdf
 
 # Mac/Unix junk
-.DS_Store
+Guild/.DS_Store
 
 # Windows junk
-Thumbs.db
-ehthumbs.db
-desktop.ini
+Guild/Thumbs.db
+Guild/ehthumbs.db
+Guild/desktop.ini
 
 # Logs and temporary files
-*.log
-*.tlog
-*.tmp
-*.bak
-*.local
+Guild/*.log
+Guild/*.tlog
+Guild/*.tmp
+Guild/*.bak
+Guild/*.local
 
 # Crash reports / autosaves
-*.dmp
-*.autosave
+Guild/*.dmp
+Guild/*.autosave
 
 # Compiled files
-*.pdb
-*.obj
-*.dll
-*.exe
-*.lib
+Guild/*.pdb
+Guild/*.obj
+Guild/*.dll
+Guild/*.exe
+Guild/*.lib
 
 # User-specific settings
-*.user
-*.userprefs
-*.ide
+Guild/*.user
+Guild/*.userprefs
+Guild/*.ide
 
 # Ignore local launcher data
-LauncherInstalled.dat
+Guild/LauncherInstalled.dat
 
-# Optional: ignore Unreal .ubt / .uasset / .umap if using binary assets control
-#*.uasset
-#*.umap
+# Optional: ignore .uasset / .umap if using binary asset control
+#Guild/*.uasset
+#Guild/*.umap
