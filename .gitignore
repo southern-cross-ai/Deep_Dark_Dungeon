@@ -1,3 +1,63 @@
+# ==============================
+# Unreal Engine Git Ignore File (adjusted for nested Guild folder)
+# Project: Deep_Dark_Dungeon
+# ==============================
+
+# Build output folders
+Guild/Binaries/
+Guild/Build/
+Guild/DerivedDataCache/
+Guild/Intermediate/
+Guild/Saved/
+
+# Visual Studio files
+Guild/.vscode/
+Guild/.vs/
+Guild/*.sln
+Guild/*.suo
+Guild/*.VC.db
+Guild/*.VC.opendb
+Guild/*.opensdf
+Guild/*.sdf
+
+# Mac/Unix junk
+Guild/.DS_Store
+
+# Windows junk
+Guild/Thumbs.db
+Guild/ehthumbs.db
+Guild/desktop.ini
+
+# Logs and temporary files
+Guild/*.log
+Guild/*.tlog
+Guild/*.tmp
+Guild/*.bak
+Guild/*.local
+
+# Crash reports / autosaves
+Guild/*.dmp
+Guild/*.autosave
+
+# Compiled files
+Guild/*.pdb
+Guild/*.obj
+Guild/*.dll
+Guild/*.exe
+Guild/*.lib
+
+# User-specific settings
+Guild/*.user
+Guild/*.userprefs
+Guild/*.ide
+
+# Ignore local launcher data
+Guild/LauncherInstalled.dat
+
+# Optional: ignore .uasset / .umap if using binary asset control
+#Guild/*.uasset
+#Guild/*.umap
+
 # Prerequisites
 *.d
 *.idea
@@ -31,3 +91,4 @@
 *.exe
 *.out
 *.app
+
