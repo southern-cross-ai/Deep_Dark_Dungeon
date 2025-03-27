@@ -15,20 +15,21 @@ This report outlines the progress made during Week 5 of Sprint 1. The team focus
 
 - Finalized review and integration of the **Dungeon System**
   - Cleaned up the project structure
+          **Before vs After Comparison**
+
+      <table>
+      <tr>
+        <th>Before(Huge loading scene)</th>
+        <th>After(No loading scene)</th>
+      </tr>
+      <tr>
+        <td><img src="https://github.com/southern-cross-ai/Deep_Dark_Dungeon/blob/main/assets/weekly_report_assets_1.png" width="400"/></td>
+        <td><img src="https://github.com/southern-cross-ai/Deep_Dark_Dungeon/blob/main/assets/weekly_report_assets_2.png" width="400"/></td>
+      </tr>
+    </table>
+    
   - Removed redundant materials and legacy components
   - Ensured compatibility with upcoming instance management
-      **Before vs After Comparison**
-
-    <table>
-    <tr>
-      <th>Before</th>
-      <th>After</th>
-    </tr>
-    <tr>
-      <td><img src="assets\weekly_report_assets_1.png" width="400"/></td>
-      <td><img src="assets\weekly_report_assets_2.png" width="400"/></td>
-    </tr>
-  </table>
 
 - Completed code review of the **Base System**
   - Due to the system’s complexity and multi-scene navigation logic, significant time was required to fully understand the architecture
