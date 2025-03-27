@@ -22,11 +22,23 @@ public:
 	FORCEINLINE class UCameraComponent* GetTopDownCameraComponent() const { return TopDownCameraComponent; }
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+    
+	// Maximum Movement Points
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
+    int32 MaxMovementPoints;
+
+    // Current Movement Points
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
+    int32 CurrentMovementPoints;
+
+    // Regeneration Rate (Movement Points per second)
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
+    float MovementPointRegenRate;
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Team")
 	TArray<ABaseHero*> TeamHeroes;
-
+	virtual void BeginPlay() override;
 private:
 	/** Top down camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
@@ -35,4 +47,11 @@ private:
 	/** Camera boom positioning the camera above the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
+
+
+	    // Timer handle for regeneration
+    FTimerHandle MovementPointRegenTimerHandle;
+
+    // Regenerate Movement Points
+    void RegenerateMovementPoints();
 };

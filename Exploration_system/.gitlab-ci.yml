@@ -1,6 +1,0 @@
-include:
-  - project: 'u7733924/guild-ci-templates'
-    file: 'group.gitlab-ci.yml'
-
-variables:
-  REPO: "u7727175/guild-exploration"

@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "Option.h"
+#include "EventVector.h"
 #include "Activity.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnConditionalEventTriggered);
@@ -47,6 +47,9 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "Events")
 	FOnConditionalEventTriggered OnConditionalEventTriggered;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Content")
+	FString EventId;
+
 protected:
 	UPROPERTY(EditAnywhere, Category = "Effect")
 	bool IfChoosable;
@@ -65,9 +68,10 @@ protected:
 
 	class UMyUserWidget* Widget;
 
+
 public:
 	UFUNCTION(BlueprintCallable, Category = "Update")
-	void EventDisplay();
+	virtual void EventDisplay();
 
 	UFUNCTION(BlueprintCallable, Category = "Update")
 	void UpdateEventCount();
@@ -89,7 +93,7 @@ protected:
 	void SetEventCount(int number);
 
 	UFUNCTION()
-	void HandleNextEvent();
+	virtual void HandleNextEvent();
 
 	UFUNCTION(BlueprintCallable, Category = "Check")
 	virtual void CheckTrigger();

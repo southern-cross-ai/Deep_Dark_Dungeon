@@ -20,3 +20,21 @@ void UMyUserWidget::InitializeComponentWithInput2(const FString& InputText)
     UE_LOG(LogTemp, Warning, TEXT("Initialized with: %s"), *String2);
 }
 
+void UMyUserWidget::InitializeComponentWithInput3(const TArray<FString>& InputTarray)
+{
+    Options = InputTarray;
+    // UE_LOG(LogTemp, Warning, TEXT("Initialized with: %s"), *Options);
+}
+
+void UMyUserWidget::InitializeComponentWithInput4(const TArray<float>& InputTarray)
+{
+    Probability = InputTarray;
+    // UE_LOG(LogTemp, Warning, TEXT("Initialized with: %s"), *Options);
+}
+
+void UMyUserWidget::InitializeComponentWithInput5(const FString& InputPortrait)
+{
+    String3 = InputPortrait;
+    UE_LOG(LogTemp, Warning, TEXT("Initialized with: %s"), *String3);
+}
+

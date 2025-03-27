@@ -24,7 +24,7 @@ public:
 	FString OptionName;
 
 	UPROPERTY(EditAnywhere)
-	float SuccessLevel;
+	float SuccessLevel = 0.3f;
 
 	UPROPERTY(EditAnywhere)
 	FString Description;
@@ -32,10 +32,10 @@ public:
 	UPROPERTY(EditAnywhere)
 	bool IsEnabled;
 
-private:
-
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(VisibleAnywhere)
 	UActivity* OptionEvent;
+
+	
 
 public:
 	UFUNCTION(Category = "Check")

@@ -29,6 +29,26 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Variable_2")
     FString String2;
 
+    // Function to initialize with a string
+    UFUNCTION(BlueprintCallable, Category = "Initialization")
+    void InitializeComponentWithInput3(const TArray<FString>& InputTarray);
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Options")
+    TArray<FString> Options;
+
+    // Function to initialize with a string
+    UFUNCTION(BlueprintCallable, Category = "Initialization")
+    void InitializeComponentWithInput4(const TArray<float>& InputTarray);
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Probabilities")
+    TArray<float> Probability;
+
+    UFUNCTION(BlueprintCallable, Category = "Initialization")
+    void InitializeComponentWithInput5(const FString& InputPortrait);
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Variable_3")
+    FString String3;
+
 protected:
     virtual void NativeConstruct() override;
 };

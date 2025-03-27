@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "GameFramework/PlayerController.h"
+#include "ProvisionAreaManager.h"
 #include "ExplorationPlayerController.generated.h"
 
 /** Forward declaration to improve compiling times */
@@ -55,7 +56,6 @@ protected:
 	uint32 bMoveToMouseCursor : 1;
 
 	
-	
 	// To add mapping context
 	virtual void BeginPlay();
 
@@ -65,6 +65,7 @@ protected:
 	void OnSetDestinationReleased();
 	void OnTouchTriggered();
 	void OnTouchReleased();
+	bool CanMoveToLocation(const FVector& TargetLocation);
 
 	
 
@@ -73,6 +74,18 @@ private:
 
 	bool bIsTouch; // Is it a touch device
 	float FollowTime; // For how long it has been pressed
+
+	UPROPERTY()
+	UProvisionAreaManager* ProvisionAreaManager;
+
+	UPROPERTY(EditAnywhere, Category = "Movement")
+    float MovementPointConsumptionRate;
+
+    // Check if the team has enough MovementPoints to move
+    bool HasEnoughMovementPoints(float Distance);
+
+    // Consume MovementPoints based on distance
+    void ConsumeMovementPoints(float Distance);
 };
 
 

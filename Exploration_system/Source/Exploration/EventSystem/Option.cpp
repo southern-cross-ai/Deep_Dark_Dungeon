@@ -15,7 +15,7 @@ UOption::~UOption()
 
 float UOption::RateCalculator()
 {
-    return 1;
+    return SuccessLevel + FMath::RandRange(0.1f, 0.7f);
 }
 
 void UOption::TriggerOutcome()

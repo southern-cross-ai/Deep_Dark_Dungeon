@@ -10,6 +10,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Materials/Material.h"
 #include "Engine/World.h"
+#include "TimerManager.h"
 #include "BaseHero.h"
 
 APlayerTeam::APlayerTeam()
@@ -46,9 +47,46 @@ APlayerTeam::APlayerTeam()
 	PrimaryActorTick.bStartWithTickEnabled = true;
 
 	TeamHeroes = TArray<ABaseHero*>();
+
+	MaxMovementPoints = 1000; // Set your desired max value
+    CurrentMovementPoints = MaxMovementPoints;
+    MovementPointRegenRate = 100.0f; // 1 point per second
 }
 
+void APlayerTeam::BeginPlay()
+{
+    Super::BeginPlay();
+
+    // Start the regeneration timer
+    GetWorldTimerManager().SetTimer(
+        MovementPointRegenTimerHandle, 
+        this, 
+        &APlayerTeam::RegenerateMovementPoints, 
+        1.0f, 
+        true
+    );
+}
+void APlayerTeam::RegenerateMovementPoints()
+{
+    if (CurrentMovementPoints < MaxMovementPoints)
+    {
+        // Optionally check if the character is not moving
+        if (GetVelocity().Size() == 0)
+        {
+            CurrentMovementPoints += MovementPointRegenRate;
+            CurrentMovementPoints = FMath::Clamp(CurrentMovementPoints, 0, MaxMovementPoints);
+        }
+    }
+}
 void APlayerTeam::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
+	if (CurrentMovementPoints <= 0)
+    {
+        GetCharacterMovement()->DisableMovement();
+    }
+    else
+    {
+        GetCharacterMovement()->SetMovementMode(MOVE_Walking);
+    }
 }

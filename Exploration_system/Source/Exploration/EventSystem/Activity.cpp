@@ -5,6 +5,8 @@
 #include "JsonParserUtility.h"
 #include "Blueprint/UserWidget.h"
 #include "EventUI/MyUserWidget.h"
+#include "Option.h"
+#include "Blueprint/WidgetBlueprintLibrary.h"
 #include "Misc/Paths.h"
 #include "Misc/FileHelper.h"
 #include "../ExplorationPlayerController.h"
@@ -31,11 +33,8 @@ void UActivity::BeginPlay()
 {
     Super::BeginPlay();
     OnConditionalEventTriggered.AddDynamic(this, &UActivity::HandleNextEvent);
-
-    //UE_LOG(LogTemp, Log, TEXT("开始"));
-    //EventDisplay();
-    // ...
-
+    AEventVector* EventVector = AEventVector::FindEventManager(GetWorld());
+    EventVector->EventRegister(EventId, this);
 }
 
 
@@ -43,7 +42,7 @@ void UActivity::BeginPlay()
 void UActivity::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
     Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-    CheckTrigger();
+    //CheckTrigger();
     //if (IfTriggerable == true){
     //	EventDisplay();
     //}
@@ -58,6 +57,17 @@ void UActivity::EventDisplay()
         UE_LOG(LogTemp, Warning, TEXT("Event Check Error!!!"));
         return;
     }
+    //TArray<UUserWidget*> FoundWidgets;
+    //UWidgetBlueprintLibrary::GetAllWidgetsOfClass(GetWorld(), FoundWidgets, UUserWidget::StaticClass(), false);
+
+    //// Step 2: 遍历并移除每个 Widget
+    //for (UUserWidget* WidgetInstance : FoundWidgets)
+    //{
+    //    if (WidgetInstance)
+    //    {
+    //        WidgetInstance->RemoveFromParent();  // 移除 Widget
+    //    }
+    //}
     CheckTrigger();
     if (CurrentEventState == EEventState::NotOccurred&&IfTriggerable) {
         FString JSONString = LoadJsonFromFile();
@@ -171,6 +181,7 @@ void UActivity::HandleNextEvent()
             Widget = CreateWidget<UMyUserWidget>(GetWorld(), LoadClass<UMyUserWidget>(nullptr, TEXT("/Game/UI/Test2.Test2_C")));
             Widget->InitializeComponentWithInput(*Description);
             Widget->InitializeComponentWithInput2(*CharacterName);
+            Widget->InitializeComponentWithInput5(*PortraitURL);
             Widget->AddToViewport();
         }
         else if (EventType == "event")
@@ -184,23 +195,6 @@ void UActivity::HandleNextEvent()
             Widget->AddToViewport();
             UE_LOG(LogTemp, Log, TEXT("Event: %s"), *Description);
         }
-        else if (EventType == "option")
-        {
-            UE_LOG(LogTemp, Log, TEXT("Option: %s"), *Description);
-            const TArray<TSharedPtr<FJsonValue>>* OptionsArray;
-            if (CurrentEvent->TryGetArrayField(TEXT("options"), OptionsArray))
-            {
-                for (const auto& OptionValue : *OptionsArray)
-                {
-                    const TSharedPtr<FJsonObject> OptionObject = OptionValue->AsObject();
-                    FString OptionText = OptionObject->GetStringField(TEXT("option_text"));
-                    int32 NextEventID = OptionObject->GetIntegerField(TEXT("next_event_id"));
-                    UE_LOG(LogTemp, Log, TEXT("Option Text: %s, Next Event ID: %d"), *OptionText, NextEventID);
-                }
-
-            }
-        }
-
         // 更新当前索引
         CurrentIndex++;
     }

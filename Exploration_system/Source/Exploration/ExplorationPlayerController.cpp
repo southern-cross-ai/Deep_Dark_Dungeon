@@ -5,13 +5,18 @@
 #include "Blueprint/AIBlueprintHelperLibrary.h"
 #include "NiagaraSystem.h"
 #include "NiagaraFunctionLibrary.h"
-#include "PlayerTeam.h"
+#include "EventSystem/TriggeredEvent.h"
+#include "ExplorationCharacter.h"
 #include "Engine/World.h"
 #include "EnhancedInputComponent.h"
 #include "InputActionValue.h"
 #include "EnhancedInputSubsystems.h"
 #include "Engine/LocalPlayer.h"
 #include "TeamEventComponent.h"
+#include "ProvisionComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "Site.h"
+#include "PlayerTeam.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -21,12 +26,17 @@ AExplorationPlayerController::AExplorationPlayerController()
 	DefaultMouseCursor = EMouseCursor::Default;
 	CachedDestination = FVector::ZeroVector;
 	FollowTime = 0.f;
+    MovementPointConsumptionRate = 1.0f; // MovementPoints consumed per unit distance
 }
 
 void AExplorationPlayerController::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
+	
+	// Initialize the ProvisionAreaManager
+    ProvisionAreaManager = NewObject<UProvisionAreaManager>(this);
+    ProvisionAreaManager->Initialize();
 }
 
 void AExplorationPlayerController::SetupInputComponent()
@@ -89,72 +99,127 @@ void AExplorationPlayerController::OnInputStarted()
 // Triggered every frame when the input is held down
 void AExplorationPlayerController::OnSetDestinationTriggered()
 {
-	// We flag that the input is being pressed
-	FollowTime += GetWorld()->GetDeltaSeconds();
-	
-	// We look for the location in the world where the player has pressed the input
-	FHitResult Hit;
-	bool bHitSuccessful = false;
-	if (bIsTouch)
-	{
-		bHitSuccessful = GetHitResultUnderFinger(ETouchIndex::Touch1, ECollisionChannel::ECC_Visibility, true, Hit);
-	}
-	else
-	{
-		bHitSuccessful = GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, true, Hit);
-	}
+    // We flag that the input is being pressed
+    FollowTime += GetWorld()->GetDeltaSeconds();
+    
+    // We look for the location in the world where the player has pressed the input
+    FHitResult Hit;
+    bool bHitSuccessful = false;
+    if (bIsTouch)
+    {
+        bHitSuccessful = GetHitResultUnderFinger(ETouchIndex::Touch1, ECollisionChannel::ECC_Visibility, true, Hit);
+    }
+    else
+    {
+        bHitSuccessful = GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, true, Hit);
+    }
 
 	auto name = Hit.GetActor()->GetFName().ToString();
 	UE_LOG(LogTemp, Display, TEXT("Actor Name: %s"), *name);
 
-	// If we hit a surface, cache the location
-	if (bHitSuccessful)
-	{
-		CachedDestination = Hit.Location;
-	}
-	
-	// Move towards mouse pointer or touch
-	APawn* ControlledPawn = GetPawn();
-	if (ControlledPawn != nullptr)
-	{
-		FVector WorldDirection = (CachedDestination - ControlledPawn->GetActorLocation()).GetSafeNormal();
-		ControlledPawn->AddMovementInput(WorldDirection, 1.0, false);
-	}
+
+    // If we hit a surface, cache the location
+    if (bHitSuccessful)
+    {
+        CachedDestination = Hit.Location;
+    }
+    
+    // Move towards mouse pointer or touch
+    APawn* ControlledPawn = GetPawn();
+    if (ControlledPawn != nullptr)
+    {
+        // **Add the check here**
+        if (CanMoveToLocation(CachedDestination))
+        {
+            if (ControlledPawn != nullptr)
+            {
+                float Distance = FVector::Dist(ControlledPawn->GetActorLocation(), CachedDestination);
+                if (HasEnoughMovementPoints(Distance))
+                {
+                    FVector WorldDirection = (CachedDestination - ControlledPawn->GetActorLocation()).GetSafeNormal();
+                    ControlledPawn->AddMovementInput(WorldDirection, 1.0, false);
+                    ConsumeMovementPoints(Distance * GetWorld()->GetDeltaSeconds());
+                }
+                else
+                {
+                    UE_LOG(LogTemp, Warning, TEXT("Not enough MovementPoints to move."));
+                    StopMovement();
+                }
+            }
+        }
+        else
+        {
+            UE_LOG(LogTemp, Warning, TEXT("Cannot move to location outside of provision areas."));
+            StopMovement();
+        }
+    }
 }
 
 void AExplorationPlayerController::OnSetDestinationReleased()
 {
-	FHitResult Hit;
-	bool bHitSuccessful = false;
-	bHitSuccessful = GetHitResultUnderCursor(ECollisionChannel::ECC_GameTraceChannel1, true, Hit);
+    FHitResult Hit;
+    bool bHitSuccessful = false;
+    bHitSuccessful = GetHitResultUnderCursor(ECollisionChannel::ECC_GameTraceChannel1, true, Hit);
 
-	//Event Handle here
-	if (bHitSuccessful)
-	{
-		AActor* HitActor = Hit.GetActor();
-		if (HitActor)
-		{
-			UTeamEventComponent* EventComponent = HitActor->FindComponentByClass<UTeamEventComponent>();
+    // Event Handle here
+    if (bHitSuccessful)
+    {
+        AActor* HitActor = Hit.GetActor();
+        if (HitActor)
+        {
+            UTeamEventComponent* EventComponent = HitActor->FindComponentByClass<UTeamEventComponent>();
 
-			if (EventComponent) {
-				EventComponent->HandleEvent();
-			}
-		}
+            if (EventComponent) {
+                EventComponent->HandleEvent();
+            }
 
-		return;
-	}
+            UTriggeredEvent* TriggeredEvent = HitActor->FindComponentByClass<UTriggeredEvent>();
+            if (TriggeredEvent&&!TriggeredEvent->isOverlapType) {
+                TriggeredEvent->EventDisplay();
+            }
+            
+        }
+
+        return;
+    }
+
 
 	bHitSuccessful = GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, true, Hit);
-	if (bHitSuccessful) {
-		APawn* ControlledPawn = GetPawn();
-		if (ControlledPawn != nullptr)
-		{
-			FVector WorldDirection = (Hit.Location - ControlledPawn->GetActorLocation()).GetSafeNormal();
-			ControlledPawn->AddMovementInput(WorldDirection, 1.0, false);
-			CachedDestination = Hit.Location;
-			UAIBlueprintHelperLibrary::SimpleMoveToLocation(this, Hit.Location);
-		}
-	}
+    if (bHitSuccessful)
+    {
+        FVector TargetLocation = Hit.Location;
+
+        // **Use the new function to check if movement is allowed**
+        if (CanMoveToLocation(TargetLocation))
+        {
+            APawn* ControlledPawn = GetPawn();
+            // Calculate distance to target
+            if (ControlledPawn != nullptr)
+            {
+                float Distance = FVector::Dist(ControlledPawn->GetActorLocation(), TargetLocation);
+
+                // Check if the team has enough MovementPoints
+                if (HasEnoughMovementPoints(Distance))
+                {
+                    // Consume MovementPoints
+                    ConsumeMovementPoints(Distance);
+
+                    // Move the pawn
+                    UAIBlueprintHelperLibrary::SimpleMoveToLocation(this, TargetLocation);
+                }
+                else
+                {
+                    UE_LOG(LogTemp, Warning, TEXT("Not enough MovementPoints to move."));
+                    // Optionally, provide feedback to the player here
+                }
+            }
+        }
+        else
+        {
+            UE_LOG(LogTemp, Warning, TEXT("Cannot move to location outside of connected provision areas."));
+            // Optionally, provide feedback to the player here
+        }
+    }
 
 	// If it was a short press
 	//if (FollowTime <= ShortPressThreshold)
@@ -170,12 +235,61 @@ void AExplorationPlayerController::OnSetDestinationReleased()
 // Triggered every frame when the input is held down
 void AExplorationPlayerController::OnTouchTriggered()
 {
-	bIsTouch = true;
-	OnSetDestinationTriggered();
+    bIsTouch = true;
+    OnSetDestinationTriggered();
 }
 
 void AExplorationPlayerController::OnTouchReleased()
 {
-	bIsTouch = false;
-	OnSetDestinationReleased();
+    bIsTouch = false;
+    OnSetDestinationReleased();
+}
+
+
+
+//Provision related
+
+bool AExplorationPlayerController::CanMoveToLocation(const FVector& TargetLocation)
+{
+    if (!ProvisionAreaManager)
+    {
+        // If the manager is not available, allow movement
+        return true;
+    }
+
+    // Get cluster IDs for current position and target location
+    int32 CurrentClusterID = ProvisionAreaManager->GetClusterIDAtLocation(GetPawn()->GetActorLocation());
+    int32 TargetClusterID = ProvisionAreaManager->GetClusterIDAtLocation(TargetLocation);
+
+    if (CurrentClusterID == -1 || TargetClusterID == -1)
+    {
+        // Either current position or target location is not within any provision area
+        return false;
+    }
+
+    // Allow movement only if both are in the same cluster
+    return CurrentClusterID == TargetClusterID;
+}
+
+
+bool AExplorationPlayerController::HasEnoughMovementPoints(float Distance)
+{
+    APlayerTeam* PlayerTeam = Cast<APlayerTeam>(GetPawn());
+    if (PlayerTeam)
+    {
+        float RequiredPoints = Distance * MovementPointConsumptionRate;
+        return PlayerTeam->CurrentMovementPoints >= RequiredPoints;
+    }
+    return false;
+}
+
+void AExplorationPlayerController::ConsumeMovementPoints(float Distance)
+{
+    APlayerTeam* PlayerTeam = Cast<APlayerTeam>(GetPawn());
+    if (PlayerTeam)
+    {
+        int32 PointsToConsume = FMath::CeilToInt(Distance * MovementPointConsumptionRate);
+        PlayerTeam->CurrentMovementPoints -= PointsToConsume;
+        PlayerTeam->CurrentMovementPoints = FMath::Clamp(PlayerTeam->CurrentMovementPoints, 0, PlayerTeam->MaxMovementPoints);
+    }
 }

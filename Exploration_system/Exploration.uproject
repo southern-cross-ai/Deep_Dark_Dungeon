@@ -10,7 +10,8 @@
 			"LoadingPhase": "Default",
 			"AdditionalDependencies": [
 				"Engine",
-				"UMG"
+				"UMG",
+				"CoreUObject"
 			]
 		}
 	],
@@ -24,6 +25,14 @@
 		},
 		{
 			"Name": "SkeletalMeshModelingTools",
+			"Enabled": true
+		},
+		{
+			"Name": "Water",
+			"Enabled": true
+		},
+		{
+			"Name": "WaterExtras",
 			"Enabled": true
 		}
 	]
