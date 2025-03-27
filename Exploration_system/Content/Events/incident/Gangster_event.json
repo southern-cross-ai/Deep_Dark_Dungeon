@@ -1,0 +1,38 @@
+{
+  "events": [
+    {
+      "type": "dialogue",
+      "description": "Wait! Hand over the money before I get rude.",
+      "character": {
+        "name": "gangster",
+        "portrait_url": "/Script/Engine.Texture2D'/Game/UI/Portrait/Gangster.Gangster'"
+      }
+    },
+    {
+      "type": "event",
+      "description": "The other party is a very vicious robber, you can't fight it with your current strength, so you'll have to break the bank."
+    },
+    {
+      "type": "option",
+      "description": "What will you do?",
+      "options": [
+        {
+          "option_text": "Fight bravely",
+          "next_event_id": "Defeat"
+        },
+        {
+          "option_text": "Fight Smartly",
+          "next_event_id": "Defeat"
+        },
+        {
+          "option_text": "Hand over 100 gold coins directly",
+          "next_event_id": "Escape"
+        },
+        {
+          "option_text": "Take a small bag of gold coins to the robber",
+          "next_event_id": "Escape"
+        }
+      ]
+    }
+  ]
+  }
