@@ -1,0 +1,42 @@
+Begin Object Class=/Script/Engine.Blueprint Name="BP_TopDownGameMode" ExportPath="/Script/Engine.Blueprint'/Game/TopDown/Blueprints/BP_TopDownGameMode.BP_TopDownGameMode'"
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfo Name="SceneThumbnailInfo_14" ExportPath="/Script/UnrealEd.SceneThumbnailInfo'/Game/TopDown/Blueprints/BP_TopDownGameMode.BP_TopDownGameMode:SceneThumbnailInfo_14'"
+   End Object
+   Begin Object Class=/Script/Engine.EdGraph Name="UserConstructionScript" ExportPath="/Script/Engine.EdGraph'/Game/TopDown/Blueprints/BP_TopDownGameMode.BP_TopDownGameMode:UserConstructionScript'"
+      Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_34" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/TopDown/Blueprints/BP_TopDownGameMode.BP_TopDownGameMode:UserConstructionScript.K2Node_FunctionEntry_34'"
+      End Object
+   End Object
+   Begin Object Class=/Script/Engine.EdGraph Name="EventGraph" ExportPath="/Script/Engine.EdGraph'/Game/TopDown/Blueprints/BP_TopDownGameMode.BP_TopDownGameMode:EventGraph'"
+   End Object
+   Begin Object Name="SceneThumbnailInfo_14" ExportPath="/Script/UnrealEd.SceneThumbnailInfo'/Game/TopDown/Blueprints/BP_TopDownGameMode.BP_TopDownGameMode:SceneThumbnailInfo_14'"
+   End Object
+   Begin Object Name="UserConstructionScript" ExportPath="/Script/Engine.EdGraph'/Game/TopDown/Blueprints/BP_TopDownGameMode.BP_TopDownGameMode:UserConstructionScript'"
+      Begin Object Name="K2Node_FunctionEntry_34" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/TopDown/Blueprints/BP_TopDownGameMode.BP_TopDownGameMode:UserConstructionScript.K2Node_FunctionEntry_34'"
+         bEnforceConstCorrectness=False
+         FunctionReference=(MemberParent="/Script/CoreUObject.Class'/Script/Engine.Actor'",MemberName="UserConstructionScript")
+         NodeGuid=304EA707490BD003E8FBA9B71E7E5D17
+         CustomProperties Pin (PinId=41E81FCA43A25A78ADF31DB54258A6F4,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
+      Nodes(0)="/Script/BlueprintGraph.K2Node_FunctionEntry'K2Node_FunctionEntry_34'"
+      bAllowDeletion=False
+      GraphGuid=6BB2C5EB4B7AD9942433F485D0F4C858
+   End Object
+   Begin Object Name="EventGraph" ExportPath="/Script/Engine.EdGraph'/Game/TopDown/Blueprints/BP_TopDownGameMode.BP_TopDownGameMode:EventGraph'"
+      Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
+      bAllowDeletion=False
+      GraphGuid=7C6C47B242E96CE5D9A02A92070B5D5C
+   End Object
+   ParentClass="/Script/CoreUObject.Class'/Script/Engine.GameModeBase'"
+   BlueprintDescription="GameMode Blueprint defines which Pawn and PlayerController to use by default."
+   BlueprintSystemVersion=2
+   SimpleConstructionScript="/Script/Engine.SimpleConstructionScript'BP_TopDownGameMode_C:SimpleConstructionScript_0'"
+   UbergraphPages(0)="/Script/Engine.EdGraph'EventGraph'"
+   FunctionGraphs(0)="/Script/Engine.EdGraph'UserConstructionScript'"
+   CategorySorting(0)="Default"
+   LastEditedDocuments(0)=(EditedObjectPath="/Game/TopDown/Blueprints/BP_TopDownGameMode.BP_TopDownGameMode:UserConstructionScript",SavedZoomAmount=1.000000)
+   LastEditedDocuments(1)=(EditedObjectPath="/Game/TopDown/Blueprints/BP_TopDownGameMode.BP_TopDownGameMode:EventGraph",SavedZoomAmount=1.000000)
+   ThumbnailInfo="/Script/UnrealEd.SceneThumbnailInfo'SceneThumbnailInfo_14'"
+   GeneratedClass="/Script/Engine.BlueprintGeneratedClass'BP_TopDownGameMode_C'"
+   bLegacyNeedToPurgeSkelRefs=False
+   BlueprintGuid=BB57AD24E1B235769D5B0BF83FCBE66C
+End Object
