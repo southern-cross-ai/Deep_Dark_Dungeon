@@ -1,96 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark Gothic Fantasy Realm</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
-        body {
-            margin: 0;
-            padding: 0;
-            background: url('https://source.unsplash.com/1600x900/?dark,dungeon,abyss') no-repeat center center fixed;
-            background-size: cover;
-            color: #ddd;
-            font-family: 'Playfair Display', serif;
-            text-align: center;
-            overflow: hidden;
-        }
-        .overlay {
-            background: rgba(0, 0, 0, 0.85);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            animation: fadeIn 2s ease-in-out;
-        }
-        h1 {
-            font-size: 4.5rem;
-            text-shadow: 6px 6px 12px black;
-            color: crimson;
-            font-family: 'Cinzel', serif;
-            opacity: 0;
-            animation: fadeInText 2s forwards 1s;
-        }
-        p {
-            font-size: 1.6rem;
-            max-width: 700px;
-            font-style: italic;
-            opacity: 0;
-            animation: fadeInText 2s forwards 2s;
-        }
-        .btn {
-            margin-top: 20px;
-            padding: 15px 35px;
-            background: darkred;
-            color: white;
-            border: 2px solid crimson;
-            font-size: 1.4rem;
-            cursor: pointer;
-            transition: 0.3s;
-            box-shadow: 0 0 15px crimson;
-            font-family: 'Cinzel', serif;
-            text-transform: uppercase;
-            opacity: 0;
-            animation: fadeInText 2s forwards 3s;
-        }
-        .btn:hover {
-            background: black;
-            box-shadow: 0 0 25px darkred;
-            border-color: black;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes fadeInText {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .game-container {
-            margin-top: 40px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            display: inline-block;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gameplay Loop Team 1</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXpmemp5dGkyazdycmtpamo3N2ozZjd1eDVmdDdkZ3JrdTM0dXJrcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gkAA7d66yItLmr2knz/giphy.gif') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+      font-family: 'Press Start 2P', cursive;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+      min-height: 100vh;
+    }
+    .container {
+      background: #000000;
+      padding: 20px;
+      border: 4px solid #0000ff;
+      box-shadow: 0px 0px 20px rgba(0, 0, 128, 0.8);
+      animation: glow 1.5s infinite alternate;
+      margin-bottom: 30px;
+      width: 100%;
+      max-width: 900px;
+    }
+    .container:first-of-type {
+    line-height: 1.6;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto 30px;
+    }
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+      .columns {
+        grid-template-columns: 1fr;
+      }
+    }
+    @keyframes glow {
+      from { box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.5); }
+      to { box-shadow: 0px 0px 20px rgba(255, 204, 0, 0.9); }
+    }
+    h1, h2, h3, h4 {
+      font-size: 16px;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px #ff0000;
+    }
+    .glitch {
+      animation: glitch 0.8s infinite linear alternate-reverse;
+    }
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(2px, -2px); }
+      60% { transform: translate(-2px, -2px); }
+      80% { transform: translate(2px, 2px); }
+      100% { transform: translate(0); }
+    }
+    .button {
+      display: inline-block;
+      padding: 15px 25px;
+      margin: 10px;
+      font-size: 14px;
+      color: #fff;
+      background: #ff8800;
+      border: 4px solid #00f;
+      text-decoration: none;
+      cursor: pointer;
+      text-shadow: 2px 2px black;
+      transition: all 0.3s ease-in-out;
+    }
+    .button:hover {
+      background: #ffcc00;
+      color: black;
+      transform: scale(1.1);
+    }
+    .file-list {
+      text-align: left;
+      background: #111;
+      border: 4px solid #fff;
+      padding: 15px;
+      max-height: 500px;
+      overflow-y: auto;
+      font-size: 12px;
+    }
+    .file-list a {
+      color: #00ffff;
+      display: block;
+      margin: 5px 0;
+      text-decoration: none;
+    }
+    .file-list a:hover {
+      text-decoration: underline;
+    }
+    .folder {
+      margin-top: 10px;
+      color: gold;
+    }
+    .indent {
+      margin-left: 20px;
+    }
+    .sprint-block {
+      background: #222;
+      padding: 20px;
+      margin: 20px 0;
+      border: 2px dashed #ffcc00;
+      text-align: left;
+    }
+    .sprint-block img {
+      width: 100%;
+      margin-top: 10px;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      text-align: center;
+    }
+    .team-member img {
+      width: 100px;
+      border-radius: 50%;
+    }
+    .team-member p {
+      font-size: 10px;
+      line-height: 1.4em;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    .highlight-block {
+      background: #222;
+      padding: 15px;
+      border: 2px solid #ffcc00;
+      transition: 0.3s;
+    }
+    .video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.6);
+}
+
+video {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* 保持原有宽高比 */
+.video-container::after {
+  content: "";
+  display: block;
+  padding-bottom: 56.25%; /* 16:9 比例 */
+}
+  </style>
 </head>
 <body>
-    <div class="overlay">
-        <h1>Embrace the Gothic Abyss</h1>
-        <p>Whispers of the lost echo through the ancient halls. Dare you step into the domain of eternal night?</p>
-        <button class="btn">Enter the Dark Realm</button>
-        
-        <div class="game-container">
-            <h2>Mini Game: Dark Abyss Runner</h2>
-            <iframe src="https://chromedino.com" width="600" height="200" frameborder="0"></iframe>
-        </div>
+
+<!-- 顶部标题栏 -->
+<div class="container">
+  <h1>🎮 Gameplay Loop Team 2</h1>
+  <p>Building the most epic gameplay loop for The Guild!</p>
+  <a class="button" href="https://github.com/southern-cross-ai/Boys-Next-Door" target="_blank">Visit GitHub</a>
+  <a class="button" href="https://trello.com/b/1onf0L18" target="_blank">Trello Board</a>
+  <a class="button" href="https://discord.gg/78dh2JnTWq" target="_blank">Join Discord</a>
+  <p>This project is to develop "The Guild," a free-to-play game designed using Unreal Engine 5 for both PC and mobile platforms.</p>
+  <p>"The Guild" aims to create an engaging fantasy base-building simulation that combines elements from popular games like Fallout Shelter and Darkest Dungeon.</p>
+</div>
+
+<!-- 双列布局容器 -->
+<div class="columns">
+  <!-- 左列 -->
+  <div class="column">
+    <!-- 视频展示 -->
+    <div class="container">
+<!--      <h3>🎬 Showcase Video</h3>-->
+<!--      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">-->
+<!--        <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>-->
+      <h3>🎬 Gameplay Demo</h3>
+      <div class="video-container">
+        <video
+                controls
+                autoplay
+                muted
+                loop
+                style="width: 100%; border: 2px solid #ffcc00;"
+        >
+          <source src="./index/Demo_video 1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      </div>
     </div>
+
+    <!-- 功能亮点 -->
+    <div class="container">
+      <h3>🌟 Feature Highlights</h3>
+      <img src="https://github.com/southern-cross-ai/Deep_Dark_Dungeon/blob/logs/assets/weekly_report_6_assets_1.png"
+           alt="portal"
+           width="400"
+           class="custom-image">
+    </div>
+
+    <!-- 文件列表 -->
+    <div class="container">
+      <h2>📁 Project Files</h2>
+      <div id="github-file-list" class="file-list">Loading GitHub files...</div>
+    </div>
+  </div>
+
+  <!-- 右列 -->
+  <div class="column">
+    <!-- 开发日志 -->
+    <div class="container">
+      <h2>📖 Devlog Highlights</h2>
+      <div class="sprint-block">
+        <h3>🚀 Phase 1: Combat System Kickoff</h3>
+        <ul>
+          <li>🎮 Formation system and swapping logic done</li>
+          <li>💢 Stress values live, tied to character state</li>
+          <li>🧠 Randomness system structured</li>
+          <li>🛡 Added 5+ new skills</li>
+        </ul>
+        <img src="https://i.imgur.com/DkHugYl.gif" alt="Deployment">
+        <img src="https://i.imgur.com/68C3XaF.gif" alt="Shield Bash">
+      </div>
+
+      <div class="sprint-block">
+        <h3>🧪 Phase 2: Core Feature Completion</h3>
+        <ul>
+          <li>🔥 Buffs/Debuffs implemented (Stun, Burn, Armor Break)</li>
+          <li>⚰️ Near-death logic with probability visuals</li>
+          <li>🎭 Integrated VFX, animations, audio</li>
+          <li>🏰 Dungeon-style arena environment done</li>
+        </ul>
+        <img src="https://i.imgur.com/CO45Q7g.gif" alt="Characters">
+      </div>
+
+      <div class="sprint-block">
+        <h3>🔧 Phase 3: Refinement & Migration</h3>
+        <ul>
+          <li>🎥 Camera polish during actions</li>
+          <li>📦 Asset migration to new repo with GameInstance fixes</li>
+          <li>🕺 Animation refinement (idle, combat)</li>
+          <li>🌆 Multiple new battle environments</li>
+          <li>💻 Landing page rework and UI polish</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 团队成员 -->
+    <div class="container">
+      <h3>👥 Team Members</h3>
+      <div class="team-grid">
+        <div class="team-member"><img src="./PageAssets/Xing.jpg" alt="Xing Chen"><p><strong>Xing Chen</strong><br>PM, Skills, Animation</p></div>
+        <div class="team-member"><img src="./PageAssets/Hongjun.jpg" alt="Hongjun Xu"><p><strong>Hongjun Xu</strong><br>MP, Combat Module, Migration</p></div>
+        <div class="team-member"><img src="./PageAssets/Baizhen.jpg" alt="Baizhen Lin"><p><strong>Baizhen Lin</strong><br>Combat Module, Migration</p></div>
+        <div class="team-member"><img src="./PageAssets/Yingxuan.jpg" alt="Yingxuan Tang"><p><strong>Yingxuan Tang</strong><br>Near-Death, UI</p></div>
+        <div class="team-member"><img src="./PageAssets/Jin.jpg" alt="Jin Zhang"><p><strong>Jin Zhang</strong><br>Animation, Scene Design</p></div>
+        <div class="team-member"><img src="./PageAssets/Shuqi.jpg" alt="Shuqi Zhuang"><p><strong>Shuqi Zhuang</strong><br>Buffs & Debuffs, Landing Page</p></div>
+        <div class="team-member"><img src="./PageAssets/Qi.jpg" alt="Qi Ji"><p><strong>Qi Ji</strong><br>Stress System, Camera, Randomness</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const GITHUB_CONFIG = {
+  owner: 'southern-cross-ai',    // 改为你的GitHub用户名
+  repo: 'Deep_Dark_Dungeon',        // 仓库名称
+  branch: 'logs',                // 分支名称
+  token: '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'    // 个人访问令牌（可选）
+
+};
+
+const GITHUB_API = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents`;
+
+async function fetchGitHubFiles(path = '', container) {
+  try {
+    const headers = {};
+    if (GITHUB_CONFIG.token) {
+      headers.Authorization = `Bearer ${GITHUB_CONFIG.token}`;
+    }
+
+    const response = await fetch(
+      `${GITHUB_API}${path ? '/' + path : ''}?ref=${GITHUB_CONFIG.branch}`,
+      { headers }
+    );
+
+    if (!response.ok) throw new Error('Failed to fetch files');
+
+    const items = await response.json();
+    container.innerHTML = ''; // 清空加载提示
+
+    items.forEach(item => {
+      if (item.type === 'dir') {
+        // 处理文件夹
+        const folderDiv = document.createElement('div');
+        folderDiv.className = 'folder';
+        folderDiv.innerHTML = `📁 ${item.name}`;
+
+        const childContainer = document.createElement('div');
+        childContainer.className = 'indent';
+
+        container.appendChild(folderDiv);
+        container.appendChild(childContainer);
+
+        // 递归获取子目录
+        fetchGitHubFiles(item.path, childContainer);
+      } else {
+        // 处理文件
+        const fileLink = document.createElement('a');
+        fileLink.href = item.html_url; // 链接到GitHub文件页面
+        fileLink.textContent = `📄 ${item.name}`;
+        fileLink.target = '_blank';
+        fileLink.className = 'indent';
+        container.appendChild(fileLink);
+      }
+    });
+
+  } catch (error) {
+    console.error('Error:', error);
+    container.innerHTML = '<div style="color:red">Error loading files</div>';
+  }
+}
+
+// 初始化加载
+document.addEventListener('DOMContentLoaded', () => {
+  const list = document.getElementById('github-file-list');
+  fetchGitHubFiles('', list); // 从根目录开始
+});
+  </script>
+
 </body>
 </html>
