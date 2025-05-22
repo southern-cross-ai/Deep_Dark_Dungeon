@@ -17,6 +17,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Site.h"
 #include "PlayerTeam.h"
+#include <NavigationSystem.h>
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -193,6 +194,26 @@ void AExplorationPlayerController::OnSetDestinationReleased()
                 if (HasEnoughMovementPoints(Distance))
                 {
                     ConsumeMovementPoints(Distance);
+
+                    // Debug: 输出当前的 PlayerController 和 Pawn
+                    if (GEngine)
+                    {
+                        FString ControllerName = GetName();
+                        FString PawnName = GetPawn() ? GetPawn()->GetName() : TEXT("None");
+
+                        GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Cyan,
+                            FString::Printf(TEXT("[Post-Consume] PlayerController: %s, ControlledPawn: %s"), *ControllerName, *PawnName));
+                    }
+                    UNavigationSystemV1* NavSys = FNavigationSystem::GetCurrent<UNavigationSystemV1>(GetWorld());
+                    bool bHasNavMesh = (NavSys && NavSys->GetMainNavData() != nullptr);
+
+                    if (GEngine)
+                    {
+                        GEngine->AddOnScreenDebugMessage(-1, 2.f,
+                            bHasNavMesh ? FColor::Green : FColor::Red,
+                            bHasNavMesh ? TEXT("NavMesh is available.") : TEXT("No NavMesh found."));
+                    }
+
                     UAIBlueprintHelperLibrary::SimpleMoveToLocation(this, TargetLocation);
                 }
                 else
@@ -221,7 +242,7 @@ void AExplorationPlayerController::OnSetDestinationReleased()
     }
 
     // Event Handle here
-    if (bHitSuccessful)
+    /*if (bHitSuccessful)
     {
         AActor* HitActor = Hit.GetActor();
 
@@ -260,7 +281,7 @@ void AExplorationPlayerController::OnSetDestinationReleased()
         {
             GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::White, TEXT("No event triggered: Nothing hit under cursor."));
         }
-    }
+    }*/
 
 
 
