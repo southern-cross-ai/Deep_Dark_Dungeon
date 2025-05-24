@@ -10,7 +10,7 @@ UProvisionComponent::UProvisionComponent()
     PrimaryComponentTick.bCanEverTick = false; // Ticking not needed with setter
 
     // Set a default value for ProvisionScore
-    ProvisionScore = 1000.0f; // You can adjust this default value
+    ProvisionScore = 1000000000.0f; // You can adjust this default value
 
     // Initialize the Sphere Component (existing)
     ProvisionSphere = CreateDefaultSubobject<USphereComponent>(TEXT("ProvisionSphere"));
