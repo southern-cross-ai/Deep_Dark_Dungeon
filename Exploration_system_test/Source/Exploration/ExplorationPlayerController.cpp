@@ -17,6 +17,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Site.h"
 #include "PlayerTeam.h"
+#include <NavigationSystem.h>
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -99,127 +100,192 @@ void AExplorationPlayerController::OnInputStarted()
 // Triggered every frame when the input is held down
 void AExplorationPlayerController::OnSetDestinationTriggered()
 {
-    // We flag that the input is being pressed
-    FollowTime += GetWorld()->GetDeltaSeconds();
-    
-    // We look for the location in the world where the player has pressed the input
-    FHitResult Hit;
-    bool bHitSuccessful = false;
-    if (bIsTouch)
-    {
-        bHitSuccessful = GetHitResultUnderFinger(ETouchIndex::Touch1, ECollisionChannel::ECC_Visibility, true, Hit);
-    }
-    else
-    {
-        bHitSuccessful = GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, true, Hit);
-    }
+ //   // We flag that the input is being pressed
+ //   FollowTime += GetWorld()->GetDeltaSeconds();
+ //   
+ //   // We look for the location in the world where the player has pressed the input
+ //   FHitResult Hit;
+ //   bool bHitSuccessful = false;
+ //   if (bIsTouch)
+ //   {
+ //       bHitSuccessful = GetHitResultUnderFinger(ETouchIndex::Touch1, ECollisionChannel::ECC_Visibility, true, Hit);
+ //   }
+ //   else
+ //   {
+ //       bHitSuccessful = GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, true, Hit);
+ //   }
 
-	auto name = Hit.GetActor()->GetFName().ToString();
-	UE_LOG(LogTemp, Display, TEXT("Actor Name: %s"), *name);
+	//auto name = Hit.GetActor()->GetFName().ToString();
+	//UE_LOG(LogTemp, Display, TEXT("Actor Name: %s"), *name);
 
 
-    // If we hit a surface, cache the location
-    if (bHitSuccessful)
-    {
-        CachedDestination = Hit.Location;
-    }
-    
-    // Move towards mouse pointer or touch
-    APawn* ControlledPawn = GetPawn();
-    if (ControlledPawn != nullptr)
-    {
-        // **Add the check here**
-        if (CanMoveToLocation(CachedDestination))
-        {
-            if (ControlledPawn != nullptr)
-            {
-                float Distance = FVector::Dist(ControlledPawn->GetActorLocation(), CachedDestination);
-                if (HasEnoughMovementPoints(Distance))
-                {
-                    FVector WorldDirection = (CachedDestination - ControlledPawn->GetActorLocation()).GetSafeNormal();
-                    ControlledPawn->AddMovementInput(WorldDirection, 1.0, false);
-                    ConsumeMovementPoints(Distance * GetWorld()->GetDeltaSeconds());
-                }
-                else
-                {
-                    UE_LOG(LogTemp, Warning, TEXT("Not enough MovementPoints to move."));
-                    StopMovement();
-                }
-            }
-        }
-        else
-        {
-            UE_LOG(LogTemp, Warning, TEXT("Cannot move to location outside of provision areas."));
-            StopMovement();
-        }
-    }
+ //   // If we hit a surface, cache the location
+ //   if (bHitSuccessful)
+ //   {
+ //       CachedDestination = Hit.Location;
+ //   }
+ //   
+ //   // Move towards mouse pointer or touch
+ //   APawn* ControlledPawn = GetPawn();
+ //   if (ControlledPawn != nullptr)
+ //   {
+ //       // **Add the check here**
+ //       if (CanMoveToLocation(CachedDestination))
+ //       {
+ //           if (ControlledPawn != nullptr)
+ //           {
+ //               float Distance = FVector::Dist(ControlledPawn->GetActorLocation(), CachedDestination);
+ //               if (HasEnoughMovementPoints(Distance))
+ //               {
+ //                   FVector WorldDirection = (CachedDestination - ControlledPawn->GetActorLocation()).GetSafeNormal();
+ //                   ControlledPawn->AddMovementInput(WorldDirection, 1.0, false);
+ //                   ConsumeMovementPoints(Distance * GetWorld()->GetDeltaSeconds());
+ //               }
+ //               else
+ //               {
+ //                   UE_LOG(LogTemp, Warning, TEXT("Not enough MovementPoints to move."));
+ //                   StopMovement();
+ //               }
+ //           }
+ //       }
+ //       else
+ //       {
+ //           UE_LOG(LogTemp, Warning, TEXT("Cannot move to location outside of provision areas."));
+ //           StopMovement();
+ //       }
+ //   }
 }
 
 void AExplorationPlayerController::OnSetDestinationReleased()
 {
     FHitResult Hit;
     bool bHitSuccessful = false;
-    bHitSuccessful = GetHitResultUnderCursor(ECollisionChannel::ECC_GameTraceChannel1, true, Hit);
 
-    // Event Handle here
+
+    bHitSuccessful = GetHitResultUnderCursor(ECollisionChannel::ECC_WorldStatic, false, Hit);
+
     if (bHitSuccessful)
     {
         AActor* HitActor = Hit.GetActor();
         if (HitActor)
         {
-            UTeamEventComponent* EventComponent = HitActor->FindComponentByClass<UTeamEventComponent>();
-
-            if (EventComponent) {
-                EventComponent->HandleEvent();
+            if (GEngine)
+            {
+                GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, FString::Printf(TEXT("Hit Actor: %s"), *HitActor->GetName()));
             }
-
-            UTriggeredEvent* TriggeredEvent = HitActor->FindComponentByClass<UTriggeredEvent>();
-            if (TriggeredEvent&&!TriggeredEvent->isOverlapType) {
-                TriggeredEvent->EventDisplay();
+        }
+        else
+        {
+            if (GEngine)
+            {
+                GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Hit something, but no valid actor found."));
             }
-            
         }
 
-        return;
-    }
-
-
-	bHitSuccessful = GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, true, Hit);
-    if (bHitSuccessful)
-    {
         FVector TargetLocation = Hit.Location;
 
-        // **Use the new function to check if movement is allowed**
         if (CanMoveToLocation(TargetLocation))
         {
             APawn* ControlledPawn = GetPawn();
-            // Calculate distance to target
-            if (ControlledPawn != nullptr)
+            if (ControlledPawn)
             {
                 float Distance = FVector::Dist(ControlledPawn->GetActorLocation(), TargetLocation);
 
-                // Check if the team has enough MovementPoints
                 if (HasEnoughMovementPoints(Distance))
                 {
-                    // Consume MovementPoints
                     ConsumeMovementPoints(Distance);
 
-                    // Move the pawn
+                    // Debug: 输出当前的 PlayerController 和 Pawn
+                    if (GEngine)
+                    {
+                        FString ControllerName = GetName();
+                        FString PawnName = GetPawn() ? GetPawn()->GetName() : TEXT("None");
+
+                        GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Cyan,
+                            FString::Printf(TEXT("[Post-Consume] PlayerController: %s, ControlledPawn: %s"), *ControllerName, *PawnName));
+                    }
+                    UNavigationSystemV1* NavSys = FNavigationSystem::GetCurrent<UNavigationSystemV1>(GetWorld());
+                    bool bHasNavMesh = (NavSys && NavSys->GetMainNavData() != nullptr);
+
+                    if (GEngine)
+                    {
+                        GEngine->AddOnScreenDebugMessage(-1, 2.f,
+                            bHasNavMesh ? FColor::Green : FColor::Red,
+                            bHasNavMesh ? TEXT("NavMesh is available.") : TEXT("No NavMesh found."));
+                    }
+
                     UAIBlueprintHelperLibrary::SimpleMoveToLocation(this, TargetLocation);
                 }
                 else
                 {
-                    UE_LOG(LogTemp, Warning, TEXT("Not enough MovementPoints to move."));
-                    // Optionally, provide feedback to the player here
+                    if (GEngine)
+                    {
+                        GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, TEXT("Not enough MovementPoints to move."));
+                    }
                 }
             }
         }
         else
         {
-            UE_LOG(LogTemp, Warning, TEXT("Cannot move to location outside of connected provision areas."));
-            // Optionally, provide feedback to the player here
+            if (GEngine)
+            {
+                GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Orange, TEXT("Cannot move to location outside of connected provision areas."));
+            }
         }
     }
+    else
+    {
+        if (GEngine)
+        {
+            GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::White, TEXT("No hit detected under cursor. Movement cancelled."));
+        }
+    }
+
+    // Event Handle here
+    /*if (bHitSuccessful)
+    {
+        AActor* HitActor = Hit.GetActor();
+
+        if (HitActor)
+        {
+            if (GEngine)
+            {
+                GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, FString::Printf(TEXT("Hit Actor: %s"), *HitActor->GetName()));
+            }
+
+            UTeamEventComponent* EventComponent = HitActor->FindComponentByClass<UTeamEventComponent>();
+            if (EventComponent)
+            {
+                EventComponent->HandleEvent();
+            }
+
+            UTriggeredEvent* TriggeredEvent = HitActor->FindComponentByClass<UTriggeredEvent>();
+            if (TriggeredEvent && !TriggeredEvent->isOverlapType)
+            {
+                TriggeredEvent->EventDisplay();
+            }
+        }
+        else
+        {
+            if (GEngine)
+            {
+                GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Hit something, but no valid actor found."));
+            }
+        }
+
+        return;
+    }
+    else
+    {
+        if (GEngine)
+        {
+            GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::White, TEXT("No event triggered: Nothing hit under cursor."));
+        }
+    }*/
+
+
+
+    
 
 	// If it was a short press
 	//if (FollowTime <= ShortPressThreshold)
@@ -235,8 +301,8 @@ void AExplorationPlayerController::OnSetDestinationReleased()
 // Triggered every frame when the input is held down
 void AExplorationPlayerController::OnTouchTriggered()
 {
-    bIsTouch = true;
-    OnSetDestinationTriggered();
+    //bIsTouch = true;
+    //OnSetDestinationTriggered();
 }
 
 void AExplorationPlayerController::OnTouchReleased()
